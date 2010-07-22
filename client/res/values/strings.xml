@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Installicus</string>
+
+    <string name="failure_dialog_title">Dialog Failed</string>
+    <string name="failure_dialog_message">Sorry, the download failed. Please try again.</string>
+    <string name="failure_dialog_button">OK</string>
+
+    <string name="after_download_text">Installation will start when the download completes.</string>
+    <string name="cancel_button">Cancel</string>
+    
 </resources>
