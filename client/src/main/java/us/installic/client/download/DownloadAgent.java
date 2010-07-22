@@ -15,6 +15,68 @@
  */
 package us.installic.client.download;
 
+import android.util.Log;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpHost;
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.StatusLine;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
 public class DownloadAgent {
 
+    private final static String TAG = "DownloadAgent";
+    private final static int BUFFER_SIZE = 64 * 1024;
+    private final int size;
+    private int progress = 0;
+    private final URL url;
+    private InputStream inputStream;
+    private byte[] buffer = new byte[BUFFER_SIZE];
+    private final OutputStream outputStream;
+
+    public DownloadAgent(String urlString, int size, OutputStream outputStream) throws IOException {
+        this.url = new URL(urlString);
+        this.size = size;
+        this.outputStream = outputStream;
+        
+        HttpClient client = new DefaultHttpClient();
+        HttpHost host = new HttpHost(url.getHost());
+        HttpGet get = new HttpGet(url.getPath());
+
+        HttpResponse response = client.execute(host, get);
+
+        int status = response.getStatusLine().getStatusCode();
+
+        if (status == HttpStatus.SC_OK) {
+            HttpEntity entity = response.getEntity();
+            inputStream = entity.getContent();
+        }
+    }
+
+    public boolean isCompleted() {
+        return progress == size;
+    }
+
+    public void grabMore() throws IOException {
+        int read = inputStream.read(buffer);
+
+        if (read > 0) {
+            Log.d(TAG, "Read " + read + " bytes");
+            progress += read;
+            outputStream.write(buffer, 0, read);
+        } else {
+            Log.d(TAG, "EOF reached");
+        }
+    }
+
+    public int getProgress() {
+        return progress;
+    }
 }
