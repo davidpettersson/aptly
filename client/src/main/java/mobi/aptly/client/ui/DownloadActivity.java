@@ -16,7 +16,6 @@
 package mobi.aptly.client.ui;
 
 import android.content.DialogInterface;
-import mobi.aptly.client.download.Result;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -37,6 +36,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import mobi.aptly.client.R;
 import mobi.aptly.client.download.DownloadAgent;
+import mobi.aptly.client.download.Result;
 import mobi.aptly.client.model.Download;
 import mobi.aptly.client.model.DownloadRef;
 import mobi.aptly.client.model.DownloadRepository;
@@ -46,7 +46,7 @@ import mobi.aptly.client.util.Sanity;
 public class DownloadActivity extends Activity {
 
     private static final String TAG = "DownloadActivity";
-    private static final String REPOSITORY_URL = "http://shebang.nu/~david/inst/";
+    private static final String REPOSITORY_URL = "http://aptly.mobi/repo/";
     private ViewSwitcher viewSwitcher;
     private ProgressBar progressBar;
     private TextView progressText;
@@ -75,7 +75,7 @@ public class DownloadActivity extends Activity {
 
             try {
                 File file = File.createTempFile(
-                        "installicus-tmp_",
+                        "aptly-tmp_",
                         ".apk",
                         Environment.getExternalStorageDirectory());
 
