@@ -39,12 +39,14 @@ public class RestDownloadRepository implements DownloadRepository {
 
     public Download lookup(DownloadRef reference) {
         try {
-            URL url = new URL(this.base.getRef() + reference);
+            URL url = new URL(this.base.toString() + reference.getIdentifier());
             Log.d(TAG, "Looking at " + url.toString());
 
             HttpClient client = new DefaultHttpClient();
             HttpHost host = new HttpHost(url.getHost());
             HttpGet get = new HttpGet(url.getPath());
+
+	    Log.d(TAG, "Grabbing " + url.getPath());
 
             HttpResponse response = client.execute(host, get);
 
