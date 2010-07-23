@@ -48,7 +48,7 @@ import mobi.aptly.client.util.Sanity;
 public class DownloadActivity extends Activity {
 
     private static final String TAG = "DownloadActivity";
-    private static final String REPOSITORY_URL_STRING = "http://aptly.mobi/v1/repo/";
+    private static final String REPOSITORY_URL_STRING = "http://aptly.mobi/api/";
     private final URL REPOSITORY_URL;
     private ViewSwitcher viewSwitcher;
     private ProgressBar progressBar;

@@ -31,15 +31,16 @@ import org.apache.http.impl.client.DefaultHttpClient;
 public class RestDownloadRepository implements DownloadRepository {
 
     private final static String TAG = "RestDownloadRepository";
+    private final static String VERSION = "v1/";
     private final URL base;
 
     public RestDownloadRepository(URL url) {
-        this.base = url;
+        this.base = url + VERSION;
     }
 
     public Download lookup(DownloadRef reference) {
         try {
-            URL url = new URL(this.base.toString() + reference.getIdentifier());
+            URL url = new URL(this.base.toString() + "downloads/" + reference.getIdentifier());
             Log.d(TAG, "Looking at " + url.toString());
 
             HttpClient client = new DefaultHttpClient();
