@@ -34,6 +34,8 @@ import android.widget.ViewSwitcher;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import mobi.aptly.client.R;
 import mobi.aptly.client.download.DownloadAgent;
 import mobi.aptly.client.download.Result;
@@ -46,7 +48,8 @@ import mobi.aptly.client.util.Sanity;
 public class DownloadActivity extends Activity {
 
     private static final String TAG = "DownloadActivity";
-    private static final String REPOSITORY_URL = "http://aptly.mobi/repo/";
+    private static final String REPOSITORY_URL_STRING = "http://aptly.mobi/v1/repo/";
+    private final URL REPOSITORY_URL;
     private ViewSwitcher viewSwitcher;
     private ProgressBar progressBar;
     private TextView progressText;
@@ -118,6 +121,19 @@ public class DownloadActivity extends Activity {
             return String.format("%d K / %d K", progress / 1024, max / 1024);
         }
     }
+
+    public DownloadActivity() {
+        super();
+        URL url = null;
+        try {
+            url = new URL(REPOSITORY_URL_STRING);
+        }
+        catch (MalformedURLException e) {
+            Log.e(TAG, "Unable to parse " + REPOSITORY_URL_STRING, e);
+        }
+        REPOSITORY_URL = url;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
