@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package us.installic.client.ui;
+package mobi.aptly.client.ui;
 
 import android.content.DialogInterface;
-import us.installic.client.download.Result;
+import mobi.aptly.client.download.Result;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -34,15 +34,14 @@ import android.widget.TextView;
 import android.widget.ViewSwitcher;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.OutputStream;
-import us.installic.client.R;
-import us.installic.client.download.DownloadAgent;
-import us.installic.client.model.Download;
-import us.installic.client.model.DownloadRef;
-import us.installic.client.model.DownloadRepository;
-import us.installic.client.model.RestDownloadRepository;
-import us.installic.client.util.Sanity;
+import mobi.aptly.client.R;
+import mobi.aptly.client.download.DownloadAgent;
+import mobi.aptly.client.model.Download;
+import mobi.aptly.client.model.DownloadRef;
+import mobi.aptly.client.model.DownloadRepository;
+import mobi.aptly.client.model.RestDownloadRepository;
+import mobi.aptly.client.util.Sanity;
 
 public class DownloadActivity extends Activity {
 

@@ -13,8 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package us.installic.client.model;
+package mobi.aptly.client.model;
 
 public interface DownloadRepository extends Repository<Download, DownloadRef> {
-
 }
