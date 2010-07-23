@@ -8,7 +8,7 @@
     <packaging>apk</packaging>
 
     <name>Aptly Client</name>
-    <description>Aptly Client</description>
+    <description>Distribution mechanism for Android applications.</description>
     <url>http://bitbucket.org/davidpettersson/aptly/</url>
     <inceptionYear>2010</inceptionYear>
 
