@@ -159,8 +159,8 @@ public class DownloadActivity extends Activity {
     protected void onResume() {
         super.onResume();
         Intent intent = getIntent();
-        Log.d(TAG, "Got data " + intent.getDataString());
-        new PreparationTask().execute(new DownloadRef(intent.getDataString()));
+        Log.d(TAG, "Got data " + intent.getDataString().substring(19));
+        new PreparationTask().execute(new DownloadRef(intent.getDataString().substring(19)));
     }
 
     private void startDownload(Download download) {
