@@ -13,10 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package us.installic.client.util;
+package mobi.aptly.client.download;
 
-public class Sanity {
-    public static void fail() {
-        throw new RuntimeException();
+import java.io.File;
+
+public class Result {
+
+    private final Status status;
+    private final File file;
+
+    public enum Status {
+
+        SUCCESS, FAILURE,
+    }
+
+    public Result(Status status) {
+        this(status, null);
+    }
+
+    public Result(Status status, File file) {
+        this.status = status;
+        this.file = file;
+    }
+
+    public File getFile() {
+        return file;
+    }
+
+    public Status getStatus() {
+        return status;
     }
 }

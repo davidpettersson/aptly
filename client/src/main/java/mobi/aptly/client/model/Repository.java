@@ -13,29 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package us.installic.client.model;
+package mobi.aptly.client.model;
 
-public class Download {
+public interface Repository<T, R> {
 
-    private String name;
-    private int size;
-    private String url;
-
-    Download(String name, int size, String url) {
-        this.name = name;
-        this.size = size;
-        this.url = url;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public String getURL() {
-        return url;
-    }
+    public T lookup(R reference);
 }

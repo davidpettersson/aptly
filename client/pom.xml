@@ -2,20 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>us.installic</groupId>
-    <artifactId>installicus-client</artifactId>
+    <groupId>mobi.aptly</groupId>
+    <artifactId>aptly-client</artifactId>
     <version>0.9.0-SNAPSHOT</version>
     <packaging>apk</packaging>
 
-    <name>Installicus Client</name>
-    <description>Installicus Client</description>
-    <url>http://bitbucket.org/davidpettersson/installicus/</url>
+    <name>Aptly Client</name>
+    <description>Aptly Client</description>
+    <url>http://bitbucket.org/davidpettersson/aptly/</url>
     <inceptionYear>2010</inceptionYear>
 
     <scm>
-        <url>http://bitbucket.org/davidpettersson/installicus/</url>
-        <connection>scm:hg:http://bitbucket.org/davidpettersson/installicus/</connection>
-        <developerConnection>scm:hg:https://bitbucket.org/davidpettersson/installicus/</developerConnection>
+        <url>http://bitbucket.org/davidpettersson/aptly/</url>
+        <connection>scm:hg:http://bitbucket.org/davidpettersson/aptly/</connection>
+        <developerConnection>scm:hg:https://bitbucket.org/davidpettersson/aptly/</developerConnection>
     </scm>
 
     <licenses>
