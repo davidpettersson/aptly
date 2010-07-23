@@ -35,12 +35,12 @@ public class RestDownloadRepository implements DownloadRepository {
     private final URL base;
 
     public RestDownloadRepository(URL url) {
-        this.base = url + VERSION;
+        this.base = url;
     }
 
     public Download lookup(DownloadRef reference) {
         try {
-            URL url = new URL(this.base.toString() + "downloads/" + reference.getIdentifier());
+            URL url = new URL(this.base.toString() + VERSION + "downloads/" + reference.getIdentifier());
             Log.d(TAG, "Looking at " + url.toString());
 
             HttpClient client = new DefaultHttpClient();
