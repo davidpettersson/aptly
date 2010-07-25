@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ViewSwitcher
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_switcher"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
+    android:layout_height="fill_parent">
+    
     <LinearLayout
         android:id="@+id/loading_layout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:gravity="center"
+        android:padding="50dp"    
         android:orientation="vertical">
 
         <ProgressBar
@@ -21,10 +22,11 @@
             android:id="@+id/loading_progress_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Please wait while download is being prepared" />
-
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/loading_progress_text" />
     </LinearLayout>
-
+    
     <LinearLayout
         android:id="@+id/details_layout"
         android:layout_width="fill_parent"
