@@ -4,18 +4,16 @@
 
     <groupId>mobi.aptly</groupId>
     <artifactId>aptly-client</artifactId>
-    <version>0.9.0-SNAPSHOT</version>
+    <version>0-SNAPSHOT</version>
     <packaging>apk</packaging>
 
     <name>Aptly Client</name>
     <description>Distribution mechanism for Android applications.</description>
-    <url>http://bitbucket.org/davidpettersson/aptly/</url>
+    <url>http://aptly.mobi/</url>
     <inceptionYear>2010</inceptionYear>
 
     <scm>
         <url>http://bitbucket.org/davidpettersson/aptly/</url>
-        <connection>scm:hg:http://bitbucket.org/davidpettersson/aptly/</connection>
-        <developerConnection>scm:hg:https://bitbucket.org/davidpettersson/aptly/</developerConnection>
     </scm>
 
     <licenses>
@@ -30,6 +28,10 @@
             <name>David Pettersson</name>
             <id>davidpettersson</id>
         </developer>
+        <developer>
+            <name>Jenny Håkansson</name>
+            <id>jennyhakansson</id>
+        </developer>
     </developers>
 
     <prerequisites>
@@ -38,6 +40,7 @@
 
     <properties>
         <project.license>apache20</project.license>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -74,12 +77,36 @@
                         <platform>1.5</platform>
                     </sdk>
                     <sign>
-                        <debug>true</debug>
+                        <debug>false</debug>
                     </sign>
                     <deleteConflictingFiles>false</deleteConflictingFiles>
                     <undeployBeforeDeploy>true</undeployBeforeDeploy>
                 </configuration>
                 <extensions>true</extensions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jarsigner-plugin</artifactId>
+                <version>1.2</version>
+                <executions>
+                    <execution>
+                        <id>sign</id>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <keystore>${project.basedir}/etc/aptly-debug.keystore</keystore>
+                    <alias>debug</alias>
+                    <storepass>sunnyday</storepass>
+                    <keypass>sunnyday</keypass>
+                    <arguments>
+                        <argument>-signedjar</argument>
+                        <argument>${project.basedir}/target/${artifactId}_signed.apk</argument>
+                    </arguments>
+                    <archive>${project.basedir}/target/${artifactId}.apk</archive>
+                </configuration>
             </plugin>
         </plugins>
         <resources>
@@ -89,4 +116,3 @@
         </resources>
     </build>
 </project>
-

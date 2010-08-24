@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="mobi.aptly.client" android:versionCode="9001" android:versionName="0.9.1">
+    package="mobi.aptly.client" android:versionCode="9003" android:versionName="0.9.3">
     
     <application android:icon="@drawable/icon" android:label="@string/app_name">
         <activity android:name=".ui.DownloadActivity" android:excludeFromRecents="true" android:screenOrientation="portrait">
