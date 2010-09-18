@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:gravity="center"
-            android:text="progress_text" />
+            android:text="Calculating..." />
 
         <TextView
             android:id="@+id/after_download_text"
