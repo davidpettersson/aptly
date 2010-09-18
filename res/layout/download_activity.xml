@@ -25,24 +25,32 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="@string/loading_progress_text" />
+            
     </LinearLayout>
     
     <LinearLayout
         android:id="@+id/details_layout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:gravity="center"
+        android:padding="20dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/title_text"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textSize="24dp"
+            android:gravity="center"
             android:text="TITLE" />
 
         <ProgressBar
             android:id="@+id/progress_bar"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
             style="@android:style/Widget.ProgressBar.Horizontal"
             android:indeterminate="false"
             android:max="100"
@@ -52,19 +60,25 @@
             android:id="@+id/progress_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
             android:text="progress_text" />
 
         <TextView
             android:id="@+id/after_download_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:gravity="center"
             android:text="@string/after_download_text" />
-
+        
         <Button
             android:id="@+id/cancel_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cancel_button"/>
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="@string/cancel_button" />
 
     </LinearLayout>
 
