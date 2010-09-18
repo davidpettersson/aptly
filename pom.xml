@@ -47,7 +47,7 @@
         <dependency>
             <groupId>com.google.android</groupId>
             <artifactId>android</artifactId>
-            <version>1.5_r4</version>
+            <version>1.6_r2</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -74,7 +74,7 @@
                 <version>2.5.1</version>
                 <configuration>
                     <sdk>
-                        <platform>1.5</platform>
+                        <platform>1.6</platform>
                     </sdk>
                     <sign>
                         <debug>false</debug>
