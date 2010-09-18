@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Aptly</string>
     
-    <string name="loading_progress_text">"Please wait while the download is being prepared..."</string>
+    <string name="loading_progress_text">"Please wait while the installation is being prepared..."</string>
 
     <string name="failure_dialog_title">Dialog Failed</string>
     <string name="failure_dialog_message">Sorry, the download failed. Please try again.</string>
